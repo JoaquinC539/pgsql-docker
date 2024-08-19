@@ -1,0 +1,26 @@
+version: '3.8'
+
+
+services:
+  postgres:
+    image: postgres:16.4-alpine3.20
+    container_name: postgres
+    environment:
+      - POSTGRES_PASSWORD="<my-root password>"
+    ports:
+      - "5432:5432"
+    networks:
+      - my-network
+    volumes:
+      - pgsql-data:/usr/local/pgsql/data
+
+volumes:
+  pgsql-data:
+
+networks:
+  my-network:
+    
+
+
+
+    
